@@ -16,15 +16,15 @@ This program is a discord bot designed for the UTS FEIT discord server for stude
 
 - Plugins as Alex suggested?
 
-## Stack List
+- Anonymous Rants - Let members pm the bot directly and the bot will relay that msg in the `#rant` channel
 
+## Stack List/specification
+
+- Oracle JDK 11
 - SQL Lite
-
 - FFMPEG (For Music Bot?)
-
 - Google Cloud - Text to speech API
-
-- [https://github.com/DV8FromTheWorld/JDA](Discord Java Wrapper)
+- [Discord Java Wrapper](https://github.com/DV8FromTheWorld/JDA)
 
 ## Discord Bots Basic Feature List
 
@@ -46,11 +46,11 @@ This program is a discord bot designed for the UTS FEIT discord server for stude
 
 
 
-> Also auto-moderations to - mute, kick and ban after violation of rules.
+> Also auto-moderation to - mute, kick and ban after violation of rules.
 >
 >  
 >
-> This needs to be worked on!.
+> **This needs to be worked on!**
 
 
 
@@ -76,7 +76,7 @@ This program is a discord bot designed for the UTS FEIT discord server for stude
 
 > !ban | This bans the user from the discord server whilst also privately messaging them from the bot with the reason of why they've been kicked. It also writes in chat that they've been banned.
 >
-> * This is done in order to prevent rogue admins from mass pruning servers with a one day activity limit, by preventing users from having admin rules and only the bot it prevents people from getting mass pruned without adequite permission
+> * This is done in order to prevent rogue admins from mass pruning servers with a one day activity limit, by preventing users from having admin rules and only the bot it prevents people from getting mass pruned without adequate permission
 >
 >
 
@@ -144,7 +144,15 @@ This program is a discord bot designed for the UTS FEIT discord server for stude
 
 ### Voice Features
 
+#### Examples
+
+- [Alfred the butcher](https://www.alfredthebutler.net/)
+- [SlimMirai](https://github.com/amirzaidi/SlimMirai)
+- [snowball](https://github.com/Olical/snowball)
+
 #### Voice Commands
+
+May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -" )
 
 > "Ignore me" - sends bot back to sleep.
 
@@ -160,29 +168,23 @@ This program is a discord bot designed for the UTS FEIT discord server for stude
 
 > Volume
 >
-> - "Increase" "up" "raise" will increase volume
+> - "Increase" "up" "raise" will increase volume by a default value
 >
-> - "Decrease" "down" "lower" will lower volume
+> - "Decrease" "down" "lower" will lower volume by a default value
 >
 > - Including a number to volume will set volume of bot specifically
 >   
 >   - "turn the volume up"
->   
 >   - "lower volume by 30"
->   
 >   - "turn volume to 20"
->   
 >   - Pause / stop
->   
 >   - Resume / unpause
->   
 >   - Skip
->   
 >   - Summon
 
 #### Music Bot
 
-> Music from; Youtube, Soundcloud, Twitch and possibly Spotify?
+> Music from; *Youtube*, *Soundcloud*, Twitch and possibly *Spotify*?
 
 
 
@@ -200,17 +202,17 @@ This program is a discord bot designed for the UTS FEIT discord server for stude
 
 ### Programming Documentation & Functions
 
-> !docs `<string>` `<string>` | Search manual pages of; python doc, java doc etc for specific entry, in addition can also search stackoverflow for questions. The format of this is `<document type i.e javadocs, stackoverflow etc>` then `<query>`
+> !code-docs `<string>` `<string>` | Search manual pages of; python doc, java doc etc for specific entry, in addition can also search stackoverflow for questions. The format of this is `<document type i.e javadocs, stackoverflow etc>` then `<query>`
 
 
 
-> !beautify `<string>` | Detects and turns code into a nice readable format, it should allow plain text code to be input with beautifier and then will format it with indents and display it as a discord block with the specified language.
+> !code-beautify `<string>` | Detects and turns code into a nice readable format, it should allow plain text code to be input with beautifier and then will format it with indents and display it as a discord block with the specified language.
 >
 > * It should in additional automatically delete the users message BUT include the name of the user who submitted it.
 
 
 
-> !snippet `<string>` | Makes a database of snippets, when a snippet is requested paste it to chat, there is some intrested menu capabilities here allowing for displaying and navigating all snippets.
+> !code-snippet `<string>` | Makes a database of snippets, when a snippet is requested paste it to chat, there is some intrested menu capabilities here allowing for displaying and navigating all snippets.
 
 ### Maths Tookit
 
@@ -232,27 +234,27 @@ This program is a discord bot designed for the UTS FEIT discord server for stude
 
 #### Gambling
 
-> !farmCoin | Allows the user to farm coin to gain a virtual currency (it just generates a random int).
+> !gameFarmCoin | Allows the user to farm coin to gain a virtual currency (it just generates a random int).
 
 
 
-> !betCoin `<int>` | Allows the user to bet coin with a 50-50 chance to double it or lose everything.
+> !gameBetCoin `<int>` | Allows the user to bet coin with a 50-50 chance to double it or lose everything.
 
 
 
-> !setCoin [`<string>`] `<int>` | Allows administrators to set a coin amount to a user or themselves.
+> !gameSetCoin [`<string>`] `<int>` | Allows administrators to set a coin amount to a user or themselves.
 
 
 
-> !payCoin `<string>` `<int>` | Allows users to give other people coins from their own wallet.
+> !gamePayCoin `<string>` `<int>` | Allows users to give other people coins from their own wallet.
 
 
 
-> !walletCoin | Allows the user to see how much coin they currently own.
+> !gameWalletCoin | Allows the user to see how much coin they currently own.
 
 
 
-> !hideCoin `<bool>` | Allows admins to set so that messages involving coin are automatically deleted (excluding the bots message).
+> !gameHideCoin `<bool>` | Allows admins to set so that messages involving coin are automatically deleted (excluding the bots message).
 
 
 
@@ -332,7 +334,7 @@ Reaction:
 
 * Urban dictionary definition snippet
 
-* Google - sends let me google that for you link
+* Google - sends let me google that for you link OR returns an n number of top result
 
 * crypto - returns price of crypto
 
