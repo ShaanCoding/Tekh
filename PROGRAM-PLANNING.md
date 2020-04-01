@@ -32,159 +32,255 @@ This program is a discord bot designed for the UTS FEIT discord server for stude
 
 - Make this as a web-app menu for configuration (maybe and contain the majority of these functions as "plugins" allowing people to enable or disable features as they wish)
 
-### Administrative Commands
+### Administrative Functions
 
-- Lock the chat until rules are accepted - have emoji to accept rules to unlock all of them otherwise chats are closed, this one can in addition be enabled / disabled with ""
+> Embed builder - create a discord embedded message with custom text and colour, we have thought of a way of doing this but not too sure.
+> 
+> - Embeded builder will have to be reviewed
+> 
+> - How will input be structured maybe some sort of markup / markdown?
 
-- Have the ability for people to select roles (via emoji or perhaps table?) to give them permissions to access subject channels
 
-- Setting welcome messages
 
-- Mute user - minutes - reason
+> <JOIN MESSAGE> This function automatically sends a message to the main lobby of the discord server upon joining. It says <Tekh> has joined with a custom joining message in addition with some information regarding the bot.
 
-- Also auto-moderations to - mute, kick and ban after violation of rules
 
-- Kick users
 
-- Ban users
+> Also auto-moderations to - mute, kick and ban after violation of rules.
+> 
+>  
+> 
+> This needs to be worked on!.
 
-- Dismiss
 
-- Image-lock
-  
-  - Lock channel to images only
-  
-  - Locks channel to text-only
 
-- Ban - bans member you tag
+> !readRules <bool> | This command locks the chat until rules are accepted. There is an emoji with a checkbox sent required to be clicked in order to allow the user to access all the "default channels" of the server".
 
-- Allows you to delete message with or without filter
 
-- Give role
 
-- Kick
+> !welcomeMessage <bool> <string> | If enabled this command sets out a custom welcome message in a custom generated image which is uploaded to the "joined messages chat". This will upload a custom image welcoming the user to the server with their profile picture, name and the custom welcome message.
 
-- Nick changes bot nick name
 
-- Nuke - deletes all messages
 
-- Prefix - changes bot prefix
+> !rules <int> | displays the specified quotued rule number rule.
 
-- Recolor - recolor a role
 
-- Autorole - autoassigns role when they join
 
-- Goodbye - says goodbye when they leave
+> !mute <string> <time> <seconds || minutes || hours || days> | This command temporarily mutes the user for a set amount of time preventing them from writing messages in any chat until they have time to "cool off".
 
-- RAS - reaction role based assignment
 
-- SAS - allows admins to set what roles to self-assign
 
-- Welcome - welcomes user to server
+> !kick <string> | This kicks the user from the discord server whilst also privately messaging them from the bot with the reason of why they've been kicked. It also writes in chat that they've been kicked.
 
-- Starboard - allows a user maintained pin channel to be used
 
-- Blacklist - allows you to blacklist members
 
-- Bot channels - set channel for bot to only be used in
+> !ban | This bans the user from the discord server whilst also privately messaging them from the bot with the reason of why they've been kicked. It also writes in chat that they've been banned.
+> 
+> * This is done in order to prevent rogue admins from mass pruning servers with a one day activity limit, by preventing users from having admin rules and only the bot it prevents people from getting mass pruned without adequite permission
+> 
+> 
 
-- disable - disable command or command group
+> !imageLock <boolean> | This locks a channel to images only.
 
-- enable - does opposite of disable
 
-- Clear
 
-### Music Features
+> !textLock <boolean> | This locks a channel to text only.
 
-Music from; Youtube, Soundcloud, Twitch and possibly Spotify?
 
-* TTS - make bot say words in VC
-- Play "" - either through !play or through text-to-speech api making a call itself
 
-- Volume
-  
-  - "Increase" "up" "raise" will increase volume
-  
-  - "Decrease" "down" "lower" will lower volume
-  
-  - Including a number to volume will set volume of bot specifically
-    
-    - "turn the volume up"
-    
-    - "lower volume by 30"
-    
-    - "turn volume to 20"
-    
-    - Pause / stop
-    
-    - Resume / unpause
-    
-    - Skip
-    
-    - Summon
+> !purge  (<all>|<number>) | (<user> (<string>|<all>|<number>)) | This purges X amount of messages from a user or the entire chat.
+
+
+
+> !botNick <string> | This changes the bots nickname, if you wanted this for some reason.
+
+
+
+> !prefix <string> | This changes the bots prefix, from default "!" to a user specified string
+
+
+
+> !autorole <string> | This automatically sets the role of users who join the discord server to <string>.
+
+
+
+>  !recolorRole | Automatically recolors a role from one color to another.
+
+
+
+> !goodbye <boolean> [<string>] | This enables or disables goodbye messages in addition to setting the message to <string>.
+
+
+
+> !reactAssign <add|post> [<string> <string> [<string>]]| This creates a react based role assignment post, where users can react with specific reactions to get a rank. This takes in the emoji string, the rank string and then an optional rank description string. 
+> 
+> * Perhaps have a way to split this across multiple channels such as #compsci-subjects #engineering-subjects with a quick link to the hidden lobby?
+> 
+> 
+
+> !blackList <string> | Has the ability to blackList members from the bot, preventing spam, abuse or just annoying people from using the bot.
+
+
+
+> !botChannel <add|remove> <String> | Adds or removes the ability for the bot to accept commands from that specific discord channel.
+
+
+
+> !starBoard <bool> [<string>] | Adds the ability to enable or disable a starboard channel where when people who react with stars to a post, if the post exceeds 5 stars the post will be added to the starboard.
+
+
+
+> !autoPrune <boolean> | Adds the ability to automatically prune discord the discord server periodically every 24 hours removing inactive users from the server.
+
+
+
+> !disable <string> | Disables a class of the bot for the server.
+
+
+
+> !enable <string> | Enables a class of the bot for the server.
+
+
+
+### Voice Features
+
+#### Voice Commands
+
+> "Ignore me" - sends bot back to sleep.
+
+
+
+> "Move" - any sentence will trigger movement, such as username or "me", "myself", "everyone" or "lobby" and channel name such as "this channel", "my channel", "our channel" or "here" or "Channel name".
+
+
+
+> Play "" - either through !play or through text-to-speech api making a call itself.
+
+
+
+> Volume
+> 
+> - "Increase" "up" "raise" will increase volume
+> 
+> - "Decrease" "down" "lower" will lower volume
+> 
+> - Including a number to volume will set volume of bot specifically
+>   
+>   - "turn the volume up"
+>   
+>   - "lower volume by 30"
+>   
+>   - "turn volume to 20"
+>   
+>   - Pause / stop
+>   
+>   - Resume / unpause
+>   
+>   - Skip
+>   
+>   - Summon
+
+#### Music Bot
+
+> Music from; Youtube, Soundcloud, Twitch and possibly Spotify?
+
+
+
+> !summon | Summons the bot to your lobby.
+
+
+
+> !move <string> {<string>} | Moves everyone in voice chat to another channel OR moves yourself to another channel. Specify the channel you wish everyone to move to and/or the group you wish to target the move to.
+
+
+
+> !tts <string> | Makes the bot say text-to-speech words in voice chat, using googles WazeNet.
+
+
 
 ### Programming Documentation & Functions
 
-- Documentation:
-  
-  - Search manual pages; python doc, java doc etc for specific entry
-    
-    - Search doc sites and stackoverflow
+> !docs <string> <string> | Search manual pages of; python doc, java doc etc for specific entry, in addition can also search stackoverflow for questions. The format of this is <document type i.e javadocs, stackoverflow etc> then <query>
 
-- Beautifier - turns code into a nice readable format, should allow plain text code to be input with beautifier will then format it with indents and display it as a discord block
-  
-  - Libaries for this
-  
-  - This should delete the original message but should also include the name of the person who sent the code
 
-- Embed builder - create a discord embedded message with custom text and colour, we have thought of a way of doing this but not too sure.
-  
-  - Embeded builder will have to be reviewed
-  
-  - How will input be structured maybe some sort of markup / markdown?
 
-- Snippets - make a database of snippets, when a snippet is requested paste it to chat, there is some intrested menu capabilities here allowing for displaying and navigating all snippets.
+> !beautify <string> | Detects and turns code into a nice readable format, it should allow plain text code to be input with beautifier and then will format it with indents and display it as a discord block with the specified language.
+> 
+> * It should in additional automatically delete the users message BUT include the name of the user who submitted it.
+
+
+
+> !snippet <string> | Makes a database of snippets, when a snippet is requested paste it to chat, there is some intrested menu capabilities here allowing for displaying and navigating all snippets.
+
+### Maths Tookit
+
+> !latex <string> | Gives the ability to write LaTeX equations in discord with the bot formatting and uploading it.
 
 ### Image Generator Commands
 
-- Image generation - not too sure what to do rn with it
+> !showMeme | Displays a random meme.
+> 
+> * I've done webscraping quite a few times and have a /r/ProgrammingHumor meme scraping and reuploading to instagram bot - perhaps we can use that if needed (not finished though).
 
-- Meme scraping? - i've done this before with a private project - instagram meme uploading bot - I can webscrape all of reddit pretty well
 
-- Generate sick memes - deep fry
+
+> !deepfry | Deepfries the users profile image.
+
+
 
 ### RPG Games & Gambling
 
 #### Gambling
 
-* Gambling - .farm - .bet
+> !farmCoin | Allows the user to farm coin to gain a virtual currency (it just generates a random int).
 
-* Coin
-  
-  * Steal - steal an amount from user
-  
-  * Write - set a users coin count
-  
-  * Transfer - gives a user your money
-  
-  * Wallet - find out how much money do you have
-  
-  * Hide-my-coins - hide coin reactions for you
 
-* Dice - bet on the roll of the dice
 
-* Roullete - bet against each other in a game of russian roullete with other members
+> !betCoin <int> | Allows the user to bet coin with a 50-50 chance to double it or lose everything.
 
-* Slots - play a round of slots
+
+
+> !setCoin [<string>] <int> | Allows administrators to set a coin amount to a user or themselves.
+
+
+
+> !payCoin <string> <int> | Allows users to give other people coins from their own wallet.
+
+
+
+> !walletCoin | Allows the user to see how much coin they currently own.
+
+
+
+> !hideCoin <bool> | Allows admins to set so that messages involving coin are automatically deleted (excluding the bots message).
+
+
+
+> !dice <int> <int> | Allows the player to bet on the roll of a dice, input numbers between 1-6 in the first one and the bet in the second.
+
+
+
+> !slots <int>  | Allows the players to play a round of slots.
+
+
 
 #### RPG Games
 
-* rate - rates a thing or user out of 10
-- 8ball - ask 8ball a question
+> !rate <string> | The bot automatically rates <string> from 1 to 10.
 
-- rps - plays a fair game of rock paper scissors
 
-- Choose, choose a random option
+
+> !8ball <string> | The ball automatically responds to <string> with a random 8ball response
+
+
+
+> !rps <string> | Allows the player to play a match of rock paper scissors against the AI
+
+
+
+> !choose <string> <string> | Makes the bot choose between two random options for the user.
+
+
 
 ### Profiles
 
@@ -254,40 +350,34 @@ Reaction:
   
   - Top: shows top user
 
+### Ease Of Life
 
-
-Just a list of general commands from many discord bots:
+- invite command - type !invite to get an instant invite to the server
 
 - Say - "Repeats back to you what ever comes after say"
 
-- "Ignore me" - sends bot back to sleep
-
 - "Whose a good boy" - confirms bot is a good boy
 
-- "Move" - any sentence will trigger movement, such as username or "me", "myself", "everyone" or "lobby" and channel name such as "this channel", "my channel", "our channel" or "here" or "Channel name"
+- uwuify - owos a text, lets not add this
+
+- inspire - generates a random terrible inspirational quotue
+
+- Todo - add things to do list
+
+- Remind me - allows you to set a reminder and gives link (will give dm)
 
 - Award members
 
 - Dank memer bot
 
 - Bonfire style discord help menu, can see category ith emojis to scroll through pages of commands with it just editing itself
-* Commands - lists all commands
 
-* Donate - helps hosting and unlocks features
+- Commands - lists all commands
 
-* Remind me - allows you to set a reminder and gives link (will give dm)
-
+- Donate - helps hosting and unlocks features
 * Shards - returns info on shards
 
 * Stats - returns stats about bot
-
-* Todo - add things to do list 
-
-* inspire - generates a random terrible inspirational quotue
-
-* Say - you tell bot hat to say
-
-* uwuify - owos a text, lets not add this
 
 
 
