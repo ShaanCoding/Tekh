@@ -42,7 +42,7 @@ This program is a discord bot designed for the UTS FEIT discord server for stude
 
 
 
-> <JOIN MESSAGE> This function automatically sends a message to the main lobby of the discord server upon joining. It says <Tekh> has joined with a custom joining message in addition with some information regarding the bot.
+> '<JOIN MESSAGE>' This function automatically sends a message to the main lobby of the discord server upon joining. It says '<Tekh>' has joined with a custom joining message in addition with some information regarding the bot.
 
 
 
@@ -54,23 +54,23 @@ This program is a discord bot designed for the UTS FEIT discord server for stude
 
 
 
-> !readRules <bool> | This command locks the chat until rules are accepted. There is an emoji with a checkbox sent required to be clicked in order to allow the user to access all the "default channels" of the server".
+> !readRules '<bool>' | This command locks the chat until rules are accepted. There is an emoji with a checkbox sent required to be clicked in order to allow the user to access all the "default channels" of the server".
 
 
 
-> !welcomeMessage <bool> <string> | If enabled this command sets out a custom welcome message in a custom generated image which is uploaded to the "joined messages chat". This will upload a custom image welcoming the user to the server with their profile picture, name and the custom welcome message.
+> !welcomeMessage '<bool>' '<string>' | If enabled this command sets out a custom welcome message in a custom generated image which is uploaded to the "joined messages chat". This will upload a custom image welcoming the user to the server with their profile picture, name and the custom welcome message.
 
 
 
-> !rules <int> | displays the specified quotued rule number rule.
+> !rules '<int>' | displays the specified quotued rule number rule.
 
 
 
-> !mute <string> <time> <seconds || minutes || hours || days> | This command temporarily mutes the user for a set amount of time preventing them from writing messages in any chat until they have time to "cool off".
+> !mute '<string>' '<time>' '<seconds || minutes || hours || days>' | This command temporarily mutes the user for a set amount of time preventing them from writing messages in any chat until they have time to "cool off".
 
 
 
-> !kick <string> | This kicks the user from the discord server whilst also privately messaging them from the bot with the reason of why they've been kicked. It also writes in chat that they've been kicked.
+> !kick '<string>' | This kicks the user from the discord server whilst also privately messaging them from the bot with the reason of why they've been kicked. It also writes in chat that they've been kicked.
 
 
 
@@ -80,27 +80,27 @@ This program is a discord bot designed for the UTS FEIT discord server for stude
 > 
 > 
 
-> !imageLock <boolean> | This locks a channel to images only.
+> !imageLock '<boolean>' | This locks a channel to images only.
 
 
 
-> !textLock <boolean> | This locks a channel to text only.
+> !textLock '<boolean>' | This locks a channel to text only.
 
 
 
-> !purge  (<all>|<number>) | (<user> (<string>|<all>|<number>)) | This purges X amount of messages from a user or the entire chat.
+> !purge  ('<all>'|'<number>') || ('<user>' ('<string>' || '<all>' || '<number>')) | This purges X amount of messages from a user or the entire chat.
 
 
 
-> !botNick <string> | This changes the bots nickname, if you wanted this for some reason.
+> !botNick '<string>' | This changes the bots nickname, if you wanted this for some reason.
 
 
 
-> !prefix <string> | This changes the bots prefix, from default "!" to a user specified string
+> !prefix '<string>' | This changes the bots prefix, from default "!" to a user specified string
 
 
 
-> !autorole <string> | This automatically sets the role of users who join the discord server to <string>.
+> !autorole '<string>' | This automatically sets the role of users who join the discord server to '<string>'.
 
 
 
@@ -108,37 +108,37 @@ This program is a discord bot designed for the UTS FEIT discord server for stude
 
 
 
-> !goodbye <boolean> [<string>] | This enables or disables goodbye messages in addition to setting the message to <string>.
+> !goodbye '<boolean>' ['<string>'] | This enables or disables goodbye messages in addition to setting the message to '<string>'.
 
 
 
-> !reactAssign <add|post> [<string> <string> [<string>]]| This creates a react based role assignment post, where users can react with specific reactions to get a rank. This takes in the emoji string, the rank string and then an optional rank description string. 
+> !reactAssign '<add|post>' ['<string>' '<string>' ['<string>']]| This creates a react based role assignment post, where users can react with specific reactions to get a rank. This takes in the emoji string, the rank string and then an optional rank description string. 
 > 
 > * Perhaps have a way to split this across multiple channels such as #compsci-subjects #engineering-subjects with a quick link to the hidden lobby?
 > 
 > 
 
-> !blackList <string> | Has the ability to blackList members from the bot, preventing spam, abuse or just annoying people from using the bot.
+> !blackList '<string>' | Has the ability to blackList members from the bot, preventing spam, abuse or just annoying people from using the bot.
 
 
 
-> !botChannel <add|remove> <String> | Adds or removes the ability for the bot to accept commands from that specific discord channel.
+> !botChannel '<add|remove>' '<String>' | Adds or removes the ability for the bot to accept commands from that specific discord channel.
 
 
 
-> !starBoard <bool> [<string>] | Adds the ability to enable or disable a starboard channel where when people who react with stars to a post, if the post exceeds 5 stars the post will be added to the starboard.
+> !starBoard '<bool>' ['<string>'] | Adds the ability to enable or disable a starboard channel where when people who react with stars to a post, if the post exceeds 5 stars the post will be added to the starboard.
 
 
 
-> !autoPrune <boolean> | Adds the ability to automatically prune discord the discord server periodically every 24 hours removing inactive users from the server.
+> !autoPrune '<boolean>' | Adds the ability to automatically prune discord the discord server periodically every 24 hours removing inactive users from the server.
 
 
 
-> !disable <string> | Disables a class of the bot for the server.
+> !disable '<string>' | Disables a class of the bot for the server.
 
 
 
-> !enable <string> | Enables a class of the bot for the server.
+> !enable '<string>' | Enables a class of the bot for the server.
 
 
 
@@ -190,31 +190,31 @@ This program is a discord bot designed for the UTS FEIT discord server for stude
 
 
 
-> !move <string> {<string>} | Moves everyone in voice chat to another channel OR moves yourself to another channel. Specify the channel you wish everyone to move to and/or the group you wish to target the move to.
+> !move '<string>' {'<string>'} | Moves everyone in voice chat to another channel OR moves yourself to another channel. Specify the channel you wish everyone to move to and/or the group you wish to target the move to.
 
 
 
-> !tts <string> | Makes the bot say text-to-speech words in voice chat, using googles WazeNet.
+> !tts '<string>' | Makes the bot say text-to-speech words in voice chat, using googles WazeNet.
 
 
 
 ### Programming Documentation & Functions
 
-> !docs <string> <string> | Search manual pages of; python doc, java doc etc for specific entry, in addition can also search stackoverflow for questions. The format of this is <document type i.e javadocs, stackoverflow etc> then <query>
+> !docs '<string>' '<string>' | Search manual pages of; python doc, java doc etc for specific entry, in addition can also search stackoverflow for questions. The format of this is '<document type i.e javadocs, stackoverflow etc>' then '<query>'
 
 
 
-> !beautify <string> | Detects and turns code into a nice readable format, it should allow plain text code to be input with beautifier and then will format it with indents and display it as a discord block with the specified language.
+> !beautify '<string>' | Detects and turns code into a nice readable format, it should allow plain text code to be input with beautifier and then will format it with indents and display it as a discord block with the specified language.
 > 
 > * It should in additional automatically delete the users message BUT include the name of the user who submitted it.
 
 
 
-> !snippet <string> | Makes a database of snippets, when a snippet is requested paste it to chat, there is some intrested menu capabilities here allowing for displaying and navigating all snippets.
+> !snippet '<string>' | Makes a database of snippets, when a snippet is requested paste it to chat, there is some intrested menu capabilities here allowing for displaying and navigating all snippets.
 
 ### Maths Tookit
 
-> !latex <string> | Gives the ability to write LaTeX equations in discord with the bot formatting and uploading it.
+> !latex '<string>' | Gives the ability to write LaTeX equations in discord with the bot formatting and uploading it.
 
 ### Image Generator Commands
 
@@ -236,15 +236,15 @@ This program is a discord bot designed for the UTS FEIT discord server for stude
 
 
 
-> !betCoin <int> | Allows the user to bet coin with a 50-50 chance to double it or lose everything.
+> !betCoin '<int>' | Allows the user to bet coin with a 50-50 chance to double it or lose everything.
 
 
 
-> !setCoin [<string>] <int> | Allows administrators to set a coin amount to a user or themselves.
+> !setCoin ['<string>'] '<int>' | Allows administrators to set a coin amount to a user or themselves.
 
 
 
-> !payCoin <string> <int> | Allows users to give other people coins from their own wallet.
+> !payCoin '<string>' '<int>' | Allows users to give other people coins from their own wallet.
 
 
 
@@ -252,33 +252,33 @@ This program is a discord bot designed for the UTS FEIT discord server for stude
 
 
 
-> !hideCoin <bool> | Allows admins to set so that messages involving coin are automatically deleted (excluding the bots message).
+> !hideCoin '<bool>' | Allows admins to set so that messages involving coin are automatically deleted (excluding the bots message).
 
 
 
-> !dice <int> <int> | Allows the player to bet on the roll of a dice, input numbers between 1-6 in the first one and the bet in the second.
+> !dice '<int>' '<int>' | Allows the player to bet on the roll of a dice, input numbers between 1-6 in the first one and the bet in the second.
 
 
 
-> !slots <int>  | Allows the players to play a round of slots.
+> !slots '<int>'  | Allows the players to play a round of slots.
 
 
 
 #### RPG Games
 
-> !rate <string> | The bot automatically rates <string> from 1 to 10.
+> !rate '<string>' | The bot automatically rates '<string>' from 1 to 10.
 
 
 
-> !8ball <string> | The ball automatically responds to <string> with a random 8ball response
+> !8ball '<string>' | The ball automatically responds to '<string>' with a random 8ball response
 
 
 
-> !rps <string> | Allows the player to play a match of rock paper scissors against the AI
+> !rps '<string>' | Allows the player to play a match of rock paper scissors against the AI
 
 
 
-> !choose <string> <string> | Makes the bot choose between two random options for the user.
+> !choose '<string>' '<string>' | Makes the bot choose between two random options for the user.
 
 
 
