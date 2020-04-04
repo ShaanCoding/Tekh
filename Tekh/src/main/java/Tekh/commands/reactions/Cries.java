@@ -23,10 +23,10 @@ public class Cries extends ListenerAdapter
             {
                 EmbedBuilder embedBuilder = new EmbedBuilder();
 
-                embedBuilder.setTitle("This is so sad.");
+                embedBuilder.setTitle("Waaaaaa!.");
                 if(args.length == 1)
                 {
-                    embedBuilder.setDescription("Cries with " + e.getMember().getAsMention());
+                    embedBuilder.setDescription(e.getMember().getAsMention() + " is sad :c");
                 }
                 else
                 {
@@ -35,7 +35,7 @@ public class Cries extends ListenerAdapter
                     {
                         argsString += args[i] + " ";
                     }
-                    embedBuilder.setDescription("Cries for " + argsString);
+                    embedBuilder.setDescription(e.getMember().getAsMention() + "is sad about " + argsString);
                 }
                 embedBuilder.setColor(new Color(0x019fde));
                 embedBuilder.setImage(CRYING_GIF);

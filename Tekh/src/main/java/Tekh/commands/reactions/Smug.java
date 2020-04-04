@@ -7,27 +7,26 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.awt.*;
 
-public class Dance extends ListenerAdapter
+public class Smug extends ListenerAdapter
 {
-    private static String DANCING_GIF = "https://media0.giphy.com/media/OkBcLrrPL6LM4/source.gif";
+    private static String SMUG_GIF = "https://media1.tenor.com/images/0c3c1c1394c9ab4f455873a4336aa3e6/tenor.gif?itemid=11146587";
 
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent e)
     {
         String[] args = e.getMessage().getContentRaw().split("\\s+");
 
-        //Check for prefix and command (dance, dances, danced)
-        if(args[0].equalsIgnoreCase(Program.prefix+"dance") || args[0].equalsIgnoreCase(Program.prefix+"dances") || args[0].equalsIgnoreCase(Program.prefix+"danced"))
+        //Check for prefix (smug, smugs)
+        if(args[0].equalsIgnoreCase(Program.prefix+"smug") || args[0].equalsIgnoreCase(Program.prefix+"smugs"))
         {
-            //Ignores if bot
             if(!e.getMember().getUser().isBot())
             {
                 EmbedBuilder embedBuilder = new EmbedBuilder();
 
-                embedBuilder.setTitle("It's time to dance!");
+                embedBuilder.setTitle("Hehe.");
                 if(args.length == 1)
                 {
-                    embedBuilder.setDescription(e.getMember().getAsMention() + " starts dancing");
+                    embedBuilder.setDescription(e.getMember().getAsMention() + " is looking a bit smug.");
                 }
                 else
                 {
@@ -36,10 +35,10 @@ public class Dance extends ListenerAdapter
                     {
                         argsString += args[i] + " ";
                     }
-                    embedBuilder.setDescription(e.getMember().getAsMention() + "starts dancing for " + argsString);
+                    embedBuilder.setDescription(e.getMember().getAsMention() + " looks smugly at " + argsString);
                 }
-                embedBuilder.setColor(new Color(0xEB5146));
-                embedBuilder.setImage(DANCING_GIF);
+                embedBuilder.setColor(new Color(0x21FFA1));
+                embedBuilder.setImage(SMUG_GIF);
                 e.getChannel().sendMessage(embedBuilder.build()).queue();
                 embedBuilder.clear();
             }

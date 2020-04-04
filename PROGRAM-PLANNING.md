@@ -228,6 +228,8 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 > 
 > - rep - gives rep to other members
 
+> !afk | Lets people know that you are afk if they tag you
+
 ### Reactions
 
 > !cheer [`<string>`] | Cheers for something or someone - **DONE**
@@ -240,13 +242,13 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 
 > !party [`<string>`] | Parties with somebody or someone - **DONE**
 
-> !pat [`<string>`] | Pats somebody or someone
+> !pat [`<string>`] | Pats somebody or someone - **DONE**
 
-> !poke [`<string>`] | Pokes somebody or someone
+> !poke [`<string>`] | Pokes somebody or someone - **NOT DONE** 
 
-> !smug [`<string>`] | Sends smug reaction to somebody or someone
+> !smug [`<string>`] | Sends smug reaction to somebody or someone - **DONE**
 
-> !f [`<string>`] | Pays respect to somebody or someone
+> !f [`<string>`] | Pays respect to somebody or someone - **DONE**
 > 
 > !hello [`<string>`] | Says hello to somebody or someone
 

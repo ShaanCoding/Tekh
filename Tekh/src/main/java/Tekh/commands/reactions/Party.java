@@ -9,7 +9,7 @@ import java.awt.*;
 
 public class Party extends ListenerAdapter
 {
-    public static String PARTY_GIF = "https://media.giphy.com/media/10hO3rDNqqg2Xe/giphy.gif";
+    private static String PARTY_GIF = "https://media.giphy.com/media/10hO3rDNqqg2Xe/giphy.gif";
 
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent e)

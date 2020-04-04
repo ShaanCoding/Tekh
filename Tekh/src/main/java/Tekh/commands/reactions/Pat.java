@@ -9,7 +9,7 @@ import java.awt.*;
 
 public class Pat extends ListenerAdapter
 {
-    public static String PAT_GIF = "https://i.makeagif.com/media/6-04-2014/1m4gQJ.gif";
+    private static String PAT_GIF = "https://i.makeagif.com/media/6-04-2014/1m4gQJ.gif";
 
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent e)
@@ -26,7 +26,7 @@ public class Pat extends ListenerAdapter
                 embedBuilder.setTitle("Pat pat.");
                 if(args.length == 1)
                 {
-                    embedBuilder.setDescription(e.getMember().getAsMention() + "pats");
+                    embedBuilder.setDescription(Program.botMentionSelf + " pats " + e.getMember().getAsMention());
                 }
                 else
                 {
@@ -44,5 +44,4 @@ public class Pat extends ListenerAdapter
             }
         }
     }
-
 }

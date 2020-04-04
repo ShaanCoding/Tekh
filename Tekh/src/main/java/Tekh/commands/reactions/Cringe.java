@@ -9,6 +9,7 @@ import java.awt.*;
 public class Cringe extends ListenerAdapter
 {
     private static String CRINGE_GIF = "https://media.giphy.com/media/bAoCxF6jjFQje/giphy.gif";
+
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent e)
     {
