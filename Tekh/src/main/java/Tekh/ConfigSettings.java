@@ -1,3 +1,5 @@
+package Tekh;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -5,7 +7,33 @@ import java.util.Properties;
 
 public class ConfigSettings
 {
-    public String GetTokenKey() throws IOException
+    public String GetTokenKey()
+    {
+        try
+        {
+            return ReadConfig("tokenKey");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String GetPrefix()
+    {
+        try
+        {
+            return ReadConfig("prefix");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String ReadConfig(String property) throws IOException
     {
         String returnString = "";
         InputStream inputStream = null;
@@ -25,7 +53,7 @@ public class ConfigSettings
                 throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
             }
 
-            returnString = properties.getProperty("tokenKey");
+            returnString = properties.getProperty(property);
         }
         catch (Exception e)
         {
