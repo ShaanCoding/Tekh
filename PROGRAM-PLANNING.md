@@ -236,9 +236,9 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 
 > !cry [`<string>`] | Cries for something or someone - **DONE**
 
-> !dance [`<string>`] | Dances with somebody or someone **DONE** 
+> !dance [`<string>`] | Dances with somebody or someone **DONE**
 
-> !party [`<string>`] | Parties with somebody or someone - 
+> !party [`<string>`] | Parties with somebody or someone - **DONE**
 
 > !pat [`<string>`] | Pats somebody or someone
 
