@@ -27,7 +27,17 @@ public class Program
         //Find way to get custom activity for bot i.e playing commands
         //jda.getPresence().setActivity(Activity.of(""));
         botMentionSelf = jda.getSelfUser().getAsMention();
-        jda.addEventListener(new Cheer(), new Cringe(), new Cries(), new Dance(), new Party(), new Pat(), new Poke(), new Smug(), new PayRespects(), new WhoIsAGoodBoy());
+        jda.addEventListener(new Cheer(),
+                new Cringe(),
+                new Cries(),
+                new Dance(),
+                new Party(),
+                new Pat(),
+                new Poke(),
+                new Smug(),
+                new PayRespects(),
+                new Hello(),
+                new WhoIsAGoodBoy());
 
     }
 

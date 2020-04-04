@@ -250,11 +250,11 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 
 > !f [`<string>`] | Pays respect to somebody or someone - **DONE**
 > 
-> !hello [`<string>`] | Says hello to somebody or someone
+> !hello [`<string>`] | Says hello to somebody or someone - **DONE**
 
-> !say `<string>` | Repeats back to you whatever you say, bascially a ping to check if the bots online
+> !say `<string>` | Repeats back to you whatever you say, bascially a ping to check if the bots online - **This one is dangerious as someone can use it to escalate other bots if they don't mute other bots** - **NOT ADDED FOR SAFETY**
 
-> !whoIsAGoodBoy | Confirms the bot is a good boy
+> !whoIsAGoodBoy | Confirms the bot is a good boy - **DONE**
 
 ### Google / Web Stuff
 
