@@ -23,29 +23,24 @@ public class Cries extends ListenerAdapter
             {
                 EmbedBuilder embedBuilder = new EmbedBuilder();
 
+                embedBuilder.setTitle("This is so sad.");
                 if(args.length == 1)
                 {
-                    embedBuilder.setTitle("This is so sad.");
                     embedBuilder.setDescription("Cries with " + e.getMember().getAsMention());
-                    embedBuilder.setColor(new Color(0x019fde));
-                    embedBuilder.setImage(CRYING_GIF);
-                    e.getChannel().sendMessage(embedBuilder.build()).queue();
-                    embedBuilder.clear();
                 }
                 else
                 {
-                    embedBuilder.setTitle("This is so sad.");
                     String argsString = "";
                     for(int i = 1; i < args.length; i++)
                     {
                         argsString += args[i] + " ";
                     }
                     embedBuilder.setDescription("Cries for " + argsString);
-                    embedBuilder.setColor(new Color(0x019fde));
-                    embedBuilder.setImage(CRYING_GIF);
-                    e.getChannel().sendMessage(embedBuilder.build()).queue();
-                    embedBuilder.clear();
                 }
+                embedBuilder.setColor(new Color(0x019fde));
+                embedBuilder.setImage(CRYING_GIF);
+                e.getChannel().sendMessage(embedBuilder.build()).queue();
+                embedBuilder.clear();
             }
         }
     }

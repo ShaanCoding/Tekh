@@ -24,29 +24,24 @@ public class Dance extends ListenerAdapter
             {
                 EmbedBuilder embedBuilder = new EmbedBuilder();
 
+                embedBuilder.setTitle("It's time to dance!");
                 if(args.length == 1)
                 {
-                    embedBuilder.setTitle("It's time to dance!");
                     embedBuilder.setDescription("Dances with " + e.getMember().getAsMention());
-                    embedBuilder.setColor(new Color(0xEB5146));
-                    embedBuilder.setImage(DANCING_GIF);
-                    e.getChannel().sendMessage(embedBuilder.build()).queue();
-                    embedBuilder.clear();
                 }
                 else
                 {
-                    embedBuilder.setTitle("It's time to dance!");
                     String argsString = "";
                     for(int i = 1; i < args.length; i++)
                     {
                         argsString += args[i] + " ";
                     }
                     embedBuilder.setDescription("Dances for " + argsString);
-                    embedBuilder.setColor(new Color(0xEB5146));
-                    embedBuilder.setImage(DANCING_GIF);
-                    e.getChannel().sendMessage(embedBuilder.build()).queue();
-                    embedBuilder.clear();
                 }
+                embedBuilder.setColor(new Color(0xEB5146));
+                embedBuilder.setImage(DANCING_GIF);
+                e.getChannel().sendMessage(embedBuilder.build()).queue();
+                embedBuilder.clear();
             }
         }
     }

@@ -4,27 +4,29 @@ import Tekh.Program;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+
 import java.awt.*;
 
-public class Cringe extends ListenerAdapter
+public class Party extends ListenerAdapter
 {
-    private static String CRINGE_GIF = "https://media.giphy.com/media/bAoCxF6jjFQje/giphy.gif";
+    public static String PARTY_GIF = "https://media.giphy.com/media/10hO3rDNqqg2Xe/giphy.gif";
+
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent e)
     {
         String[] args = e.getMessage().getContentRaw().split("\\s+");
 
-        //Check for prefix and command (cringe or cringes)
-        if(args[0].equalsIgnoreCase(Program.prefix+"cringe") || args[0].equalsIgnoreCase(Program.prefix+"cringes"))
+        //Check for prefix (party, partys, parties, partied)
+        if(args[0].equalsIgnoreCase(Program.prefix+"party") || args[0].equalsIgnoreCase(Program.prefix+"partys") || args[0].equalsIgnoreCase(Program.prefix+"parties") || args[0].equalsIgnoreCase(Program.prefix+"partied"))
         {
             if(!e.getMember().getUser().isBot())
             {
                 EmbedBuilder embedBuilder = new EmbedBuilder();
 
-                embedBuilder.setTitle("Oh god why, god please why");
+                embedBuilder.setTitle("It's time to party!");
                 if(args.length == 1)
                 {
-                    embedBuilder.setDescription("Cringes with " + e.getMember().getAsMention());
+                    embedBuilder.setDescription("Parties with " + e.getMember().getAsMention());
                 }
                 else
                 {
@@ -33,10 +35,10 @@ public class Cringe extends ListenerAdapter
                     {
                         argsString += args[i] + " ";
                     }
-                    embedBuilder.setDescription("Cringes at " + argsString);
+                    embedBuilder.setDescription("Parties for " + argsString);
                 }
-                embedBuilder.setColor(new Color(0x8000FF));
-                embedBuilder.setImage(CRINGE_GIF);
+                embedBuilder.setColor(new Color(0x9278FF));
+                embedBuilder.setImage(PARTY_GIF);
                 e.getChannel().sendMessage(embedBuilder.build()).queue();
                 embedBuilder.clear();
             }
