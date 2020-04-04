@@ -4,13 +4,11 @@ import Tekh.Program;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-
-import javax.annotation.Nonnull;
 import java.awt.*;
 
 public class PayRespects extends ListenerAdapter
 {
-    private static String PAYRESPECT_GIF = "https://em.wattpad.com/d08004d2758fdac363434a22e55e0321ec83dda7/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f7850706f532d70777830576a56513d3d2d3231333037353831332e313433323230346139363534396363392e676966?s=fit&w=1280&h=1280";
+    private static String PAYRESPECT_GIF = "https://media1.tenor.com/images/4897527e0f678cc6876bafb02f2d8ba8/tenor.gif?itemid=5372255";
 
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent e)

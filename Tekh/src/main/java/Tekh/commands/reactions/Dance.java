@@ -4,7 +4,6 @@ import Tekh.Program;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-
 import java.awt.*;
 
 public class Dance extends ListenerAdapter
@@ -36,7 +35,7 @@ public class Dance extends ListenerAdapter
                     {
                         argsString += args[i] + " ";
                     }
-                    embedBuilder.setDescription(e.getMember().getAsMention() + "starts dancing for " + argsString);
+                    embedBuilder.setDescription(e.getMember().getAsMention() + " starts dancing for " + argsString);
                 }
                 embedBuilder.setColor(new Color(0xEB5146));
                 embedBuilder.setImage(DANCING_GIF);

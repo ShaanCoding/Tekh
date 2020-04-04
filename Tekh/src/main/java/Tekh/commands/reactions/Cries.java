@@ -35,7 +35,7 @@ public class Cries extends ListenerAdapter
                     {
                         argsString += args[i] + " ";
                     }
-                    embedBuilder.setDescription(e.getMember().getAsMention() + "is sad about " + argsString);
+                    embedBuilder.setDescription(e.getMember().getAsMention() + " is sad about " + argsString);
                 }
                 embedBuilder.setColor(new Color(0x019fde));
                 embedBuilder.setImage(CRYING_GIF);

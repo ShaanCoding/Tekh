@@ -4,8 +4,6 @@ import Tekh.Program;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-import javax.annotation.Nonnull;
-
 public class Hello extends ListenerAdapter
 {
     @Override
