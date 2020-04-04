@@ -225,9 +225,9 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 
 ### Reactions
 
-> !cheer [`<string>`] | Cheers for something or someone
+> !cheer [`<string>`] | Cheers for something or someone - **DONE**
 
-> !cringe [`<string>`] | Cringes for something or someone
+> !cringe [`<string>`] | Cringes for something or someone - **DONE**
 
 > !cry [`<string>`] | Cries for something or someone
 
@@ -294,7 +294,3 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 > * Uptime
 > 
 > * Ping
-
-
-
-
