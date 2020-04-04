@@ -190,6 +190,24 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 
 ### Profiles
 
+> !accountInfo [`<string>`] | Be able to view account info of a given user including:
+> 
+> * Fullname
+> 
+> * Nickname
+> 
+> * Account created date
+> 
+> * ID
+> 
+> * Date joined this server
+> 
+> * IsBot
+> 
+> * Roles
+> 
+> * Nitrobooster
+
 > Have levels | The users recieves a level based on their level of activity in chat from this they earn bragging rights as well as being able to "rank" themselves against their peers for who uses the discord the most.
 > 
 > !rank [`<string>`] | This command allows users to see what rank they are OR if the optional `<string>` is added this allows users to view other users ranks
@@ -202,19 +220,6 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 
 >  User Bios:
 > 
-> * Fullname
-> 
-> * nick
-> 
-> * account created
-> 
-> * ID
-> 
-> * joined this server
-> 
-> * roles
-> 
-> * nitrobooster?
 > - Background - allows you to edit your profile background image
 > 
 > - bio - allows you to change bio
@@ -223,31 +228,33 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 > 
 > - rep - gives rep to other members
 
+> !afk | Lets people know that you are afk if they tag you
+
 ### Reactions
 
-> !cheer [`<string>`] | Cheers for something or someone
+> !cheer [`<string>`] | Cheers for something or someone - **DONE**
 
-> !cringe [`<string>`] | Cringes for something or someone
+> !cringe [`<string>`] | Cringes for something or someone - **DONE**
 
-> !cry [`<string>`] | Cries for something or someone
+> !cry [`<string>`] | Cries for something or someone - **DONE**
 
-> !dance [`<string>`] | Dances with somebody or someone
+> !dance [`<string>`] | Dances with somebody or someone **DONE**
 
-> !party [`<string>`] | Parties with somebody or someone
+> !party [`<string>`] | Parties with somebody or someone - **DONE**
 
-> !pat [`<string>`] | Pats somebody or someone
+> !pat [`<string>`] | Pats somebody or someone - **DONE**
 
-> !poke [`<string>`] | Pokes somebody or someone
+> !poke [`<string>`] | Pokes somebody or someone - **NOT DONE** 
 
-> !smug [`<string>`] | Sends smug reaction to somebody or someone
+> !smug [`<string>`] | Sends smug reaction to somebody or someone - **DONE**
 
-> !f [`<string>`] | Pays respect to somebody or someone
+> !f [`<string>`] | Pays respect to somebody or someone - **DONE**
 > 
-> !hello [`<string>`] | Says hello to somebody or someone
+> !hello [`<string>`] | Says hello to somebody or someone - **DONE**
 
-> !say `<string>` | Repeats back to you whatever you say, bascially a ping to check if the bots online
+> !say `<string>` | Repeats back to you whatever you say, bascially a ping to check if the bots online - **This one is dangerious as someone can use it to escalate other bots if they don't mute other bots** - **NOT ADDED FOR SAFETY**
 
-> !whoIsAGoodBoy | Confirms the bot is a good boy
+> !whoIsAGoodBoy | Confirms the bot is a good boy - **DONE**
 
 ### Google / Web Stuff
 
@@ -294,7 +301,3 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 > * Uptime
 > 
 > * Ping
-
-
-
-

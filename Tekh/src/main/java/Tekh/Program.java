@@ -12,6 +12,7 @@ public class Program
 {
     public static String tokenKey = "";
     public static String prefix = "";
+    public static String botMentionSelf = "";
 
     public static void main(String[] args) throws Exception
     {
@@ -20,13 +21,22 @@ public class Program
         prefix = configSettings.GetPrefix();
 
         JDA jda = new JDABuilder(AccountType.BOT).setToken(tokenKey).build();
-        jda.getPresence().setStatus(OnlineStatus.IDLE);
-        jda.getPresence().setActivity(Activity.watching("Boring developers cry"));
+        jda.getPresence().setStatus(OnlineStatus.ONLINE); //STATUS
+        jda.getPresence().setActivity(Activity.watching("Everyone O_o")); //GAME ACTIVITY
         jda.setAutoReconnect(true);
         //Find way to get custom activity for bot i.e playing commands
         //jda.getPresence().setActivity(Activity.of(""));
-
-        jda.addEventListener(new Cheer());
+        botMentionSelf = jda.getSelfUser().getAsMention();
+        jda.addEventListener(new Cheer(),
+                new Cringe(),
+                new Cries(),
+                new Dance(),
+                new Party(),
+                new Pat(),
+                new Poke(),
+                new Smug(),
+                new PayRespects(),
+                new Hello(),
+                new WhoIsAGoodBoy());
     }
-
 }
