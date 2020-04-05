@@ -1,4 +1,4 @@
-package Tekh.commands.reactions;
+package tekh.commands.reactions;
 
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;

@@ -1,6 +1,6 @@
-package Tekh.commands.misc;
+package tekh.commands.misc;
 
-import Tekh.Program;
+import tekh.Program;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 
