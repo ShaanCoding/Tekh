@@ -1,5 +1,6 @@
 package Tekh;
 
+import Tekh.commands.misc.Donate;
 import Tekh.commands.misc.InspiroBot;
 import Tekh.commands.misc.Invite;
 import Tekh.commands.reactions.*;
@@ -51,7 +52,8 @@ public class Program
 
         builder.addCommands(
                 new Invite(),
-                new InspiroBot());
+                new InspiroBot(),
+                new Donate());
 
         CommandClient client = builder.build();
         jda.addEventListener(client);

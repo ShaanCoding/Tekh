@@ -86,7 +86,7 @@ public class ConfigSettings
         }
     }
 
-    public String ReadConfig(String property) throws IOException
+    private String ReadConfig(String property) throws IOException
     {
         String returnString = "";
         InputStream inputStream = null;

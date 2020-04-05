@@ -22,7 +22,7 @@ public class WhoIsAGoodBoy extends Command
         //Ignores bot
         if (!e.getMember().getUser().isBot())
         {
-            e.getChannel().sendMessage("I'm a good boy!").queue();;
+            e.getChannel().sendMessage("I'm a good boy!").queue();
         }
     }
 }
