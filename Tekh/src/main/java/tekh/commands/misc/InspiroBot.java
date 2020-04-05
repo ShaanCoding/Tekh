@@ -1,4 +1,4 @@
-package Tekh.commands.misc;
+package tekh.commands.misc;
 
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;

@@ -1,8 +1,7 @@
-package Tekh.commands.misc;
+package tekh.commands.misc;
 
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
-import net.dv8tion.jda.api.EmbedBuilder;
 
 public class Invite extends Command
 {
