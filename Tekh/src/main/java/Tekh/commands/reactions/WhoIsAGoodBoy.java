@@ -1,24 +1,28 @@
 package Tekh.commands.reactions;
 
-import Tekh.Program;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import com.jagrosh.jdautilities.command.Command;
+import com.jagrosh.jdautilities.command.CommandEvent;
 
-public class WhoIsAGoodBoy extends ListenerAdapter
+public class WhoIsAGoodBoy extends Command
 {
+    public WhoIsAGoodBoy()
+    {
+        this.name = "whoisagoodboy";
+        this.aliases = new String[]{"goodboy", "wiagb"};
+        this.category = new Category("Reactions");
+        this.arguments = "";
+        this.help = "Confirms that the bot is a good boy";
+    }
+
     @Override
-    public void onGuildMessageReceived(GuildMessageReceivedEvent e)
+    protected void execute(CommandEvent e)
     {
         String[] args = e.getMessage().getContentRaw().split("\\s+");
 
-        //Checks for prefix and command (cheer or cheers)
-        if (args[0].equalsIgnoreCase(Program.prefix + "whoisagoodboy"))
+        //Ignores bot
+        if (!e.getMember().getUser().isBot())
         {
-            //Ignores bot
-            if (!e.getMember().getUser().isBot())
-            {
-                e.getChannel().sendMessage("I'm a good boy!").queue();;
-            }
+            e.getChannel().sendMessage("I'm a good boy!").queue();;
         }
     }
 }

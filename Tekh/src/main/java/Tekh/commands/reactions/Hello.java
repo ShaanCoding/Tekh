@@ -1,23 +1,25 @@
 package Tekh.commands.reactions;
 
-import Tekh.Program;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import com.jagrosh.jdautilities.command.Command;
+import com.jagrosh.jdautilities.command.CommandEvent;
 
-public class Hello extends ListenerAdapter
+public class Hello extends Command
 {
-    @Override
-    public void onGuildMessageReceived(GuildMessageReceivedEvent e)
+    public Hello()
     {
-        String[] args = e.getMessage().getContentRaw().split("\\s+");
+        this.name = "hello";
+        this.aliases = new String[]{"hi", "hiya", "hey"};
+        this.category = new Category("Reactions");
+        this.arguments = "";
+        this.help = "Says hello to the user";
+    }
 
-        //Takes input of (hello, hi, hiya, hey)
-        if(args[0].equalsIgnoreCase(Program.prefix+"hello") || args[0].equalsIgnoreCase(Program.prefix+"hi") || args[0].equalsIgnoreCase(Program.prefix+"hiya") || args[0].equalsIgnoreCase(Program.prefix+"hey"))
+    @Override
+    protected void execute(CommandEvent e)
+    {
+        if(!e.getMember().getUser().isBot())
         {
-            if(!e.getMember().getUser().isBot())
-            {
-                e.getChannel().sendMessage("Hi! " + e.getMember().getAsMention()).queue();
-            }
+            e.getChannel().sendMessage("Hi! " + e.getMember().getAsMention()).queue();
         }
     }
 }
