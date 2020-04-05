@@ -10,6 +10,8 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import javax.annotation.Nonnull;
 import java.awt.*;
 import java.util.*;
+import java.util.List;
+import java.util.stream.IntStream;
 
 public class Help extends Command
 {
@@ -41,16 +43,29 @@ public class Help extends Command
             }
             else
             {
-                //LOOK FOR COMMANDS TODO
+                for (int i = 0; i < e.getClient().getCommands().size(); i++)
+                {
+                    //Check if command exists
+                    List<String> aliasArray = Arrays.asList(e.getClient().getCommands().get(i).getAliases().clone());
+                    if(args[1].equalsIgnoreCase(e.getClient().getCommands().get(i).getName()) || aliasArray.contains(args[1].toLowerCase()))
+                    {
+                        //If isn't admin command and isn't owner ID skips
+                        if (!e.getClient().getCommands().get(i).isOwnerCommand() || e.getAuthor().getId().equals(e.getClient().getOwnerId()))
+                        {
+                            //LOOK FOR COMMANDS TODO
+                            StringBuilder builder = new StringBuilder();
+                          builder.append("\n**").append(e.getClient().getPrefix()).append(e.getClient().getCommands().get(i).getName())
+                            .append(e.getClient().getCommands().get(i).getArguments()==null ? "**" : " "+e.getClient().getCommands().get(i).getArguments()+"**")
+                            .append(" - ").append(e.getClient().getCommands().get(i).getHelp());
 
-                /*
-                          builder.append("\n**").append(e.getClient().getPrefix()).append(command.getName())
-                        .append(command.getArguments()==null ? "**" : " "+command.getArguments()+"**")
-                        .append(" - ").append(command.getHelp());
-                 */
+                          e.getChannel().sendMessage(builder).queue();
+                        }
+                        break;
+                    }
+                }
             }
-
         }
+
     }
 
     private static String formatHelpNoArgs(CommandEvent e)
