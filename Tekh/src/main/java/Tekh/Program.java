@@ -2,32 +2,38 @@ package Tekh;
 
 import Tekh.commands.reactions.*;
 
+import com.jagrosh.jdautilities.command.CommandClient;
 import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
+import com.jagrosh.jdautilities.command.CommandClientBuilder;
 
 public class Program
 {
-    public static String tokenKey = "";
-    public static String prefix = "";
-    public static String botMentionSelf = "";
+    public static ConfigSettings configSettings = new ConfigSettings();
+    public static JDA jda;
+
+    public static String EMOJI_GLOBAL = ":comet:";
 
     public static void main(String[] args) throws Exception
     {
-        ConfigSettings configSettings = new ConfigSettings();
-        tokenKey = configSettings.GetTokenKey();
-        prefix = configSettings.GetPrefix();
-
-        JDA jda = new JDABuilder(AccountType.BOT).setToken(tokenKey).build();
-        jda.getPresence().setStatus(OnlineStatus.ONLINE); //STATUS
-        jda.getPresence().setActivity(Activity.watching("Everyone O_o")); //GAME ACTIVITY
+        jda = new JDABuilder(AccountType.BOT).setToken(configSettings.GetTokenKey()).build();
         jda.setAutoReconnect(true);
-        //Find way to get custom activity for bot i.e playing commands
-        //jda.getPresence().setActivity(Activity.of(""));
-        botMentionSelf = jda.getSelfUser().getAsMention();
-        jda.addEventListener(new Cheer(),
+
+        CommandClientBuilder builder = new CommandClientBuilder();
+        builder.setStatus(OnlineStatus.ONLINE);
+        builder.setActivity(Activity.playing("Type !help | http://github.com/ShaanCoding/Tekh"));
+        builder.setOwnerId(configSettings.GetOwnerID());
+        builder.setPrefix(configSettings.GetPrefix());
+
+        //Sets help command to custom command (uses lambda, only type of expression I could find)
+        // m = message, s, f = success and failure success continues, failure replys with warning
+        builder.useHelpBuilder(false);
+
+        builder.addCommands(new Help(),
+                new Cheer(),
                 new Cringe(),
                 new Cries(),
                 new Dance(),
@@ -38,5 +44,8 @@ public class Program
                 new PayRespects(),
                 new Hello(),
                 new WhoIsAGoodBoy());
+
+        CommandClient client = builder.build();
+        jda.addEventListener(client);
     }
 }
