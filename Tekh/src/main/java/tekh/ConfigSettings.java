@@ -1,4 +1,4 @@
-package Tekh;
+package tekh;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -86,7 +86,7 @@ public class ConfigSettings
         }
     }
 
-    public String ReadConfig(String property) throws IOException
+    private String ReadConfig(String property) throws IOException
     {
         String returnString = "";
         InputStream inputStream = null;

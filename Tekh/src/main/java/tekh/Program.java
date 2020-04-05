@@ -1,6 +1,9 @@
-package Tekh;
+package tekh;
 
-import Tekh.commands.reactions.*;
+import tekh.commands.misc.Donate;
+import tekh.commands.misc.InspiroBot;
+import tekh.commands.misc.Invite;
+import tekh.commands.reactions.*;
 
 import com.jagrosh.jdautilities.command.CommandClient;
 import net.dv8tion.jda.api.AccountType;
@@ -32,7 +35,9 @@ public class Program
         // m = message, s, f = success and failure success continues, failure replys with warning
         builder.useHelpBuilder(false);
 
-        builder.addCommands(new Help(),
+        builder.addCommand(new Help());
+
+        builder.addCommands(
                 new Cheer(),
                 new Cringe(),
                 new Cries(),
@@ -44,6 +49,11 @@ public class Program
                 new PayRespects(),
                 new Hello(),
                 new WhoIsAGoodBoy());
+
+        builder.addCommands(
+                new Invite(),
+                new InspiroBot(),
+                new Donate());
 
         CommandClient client = builder.build();
         jda.addEventListener(client);
