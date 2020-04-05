@@ -14,8 +14,8 @@ public class Cries extends Command
         this.name = "cry";
         this.aliases = new String[]{"cries", "cried"};
         this.category = new Category("Reactions");
-        //TODO write proper helpme
-        this.help = "Type cry for info TEST";
+        this.arguments = "[String]";
+        this.help = "Cries for something or with someone";
     }
 
     @Override

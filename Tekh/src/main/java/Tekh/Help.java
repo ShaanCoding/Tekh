@@ -20,8 +20,8 @@ public class Help extends Command
         this.name = "help";
         this.aliases = new String[]{"helps", "commands", "command"};
         this.category = new Category("General");
-        //TODO write proper helpme
-        this.help = "Type HELP for info TEST";
+        this.arguments = "[Command]";
+        this.help = "Help works by showing you all the commands available or if a specific command is selected it will show you information on that command";
     }
 
     @Override
@@ -52,7 +52,6 @@ public class Help extends Command
                         //If isn't admin command and isn't owner ID skips
                         if (!e.getClient().getCommands().get(i).isOwnerCommand() || e.getAuthor().getId().equals(e.getClient().getOwnerId()))
                         {
-                            //LOOK FOR COMMANDS TODO
                             StringBuilder builder = new StringBuilder();
                           builder.append("\n**").append(e.getClient().getPrefix()).append(e.getClient().getCommands().get(i).getName())
                             .append(e.getClient().getCommands().get(i).getArguments()==null ? "**" : " "+e.getClient().getCommands().get(i).getArguments()+"**")
@@ -85,7 +84,6 @@ public class Help extends Command
                     builder.append("\n\n  **").append(category==null ? "No Category" : category.getName()).append(":**\n");
                 }
 
-                //Writes command - NEEDS TO FIND OUT HOW MUCH PER CATEGORY TODO
                 if(i < e.getClient().getCommands().size() - 1)
                 {
                     builder.append("``" + e.getClient().getCommands().get(i).getName() + "``").append(Objects.equals(category, e.getClient().getCommands().get(i).getCategory()) ? ", " : "");

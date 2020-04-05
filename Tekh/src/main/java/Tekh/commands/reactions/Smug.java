@@ -14,8 +14,8 @@ public class Smug extends Command
         this.name = "smug";
         this.aliases = new String[]{"smugs"};
         this.category = new Category("Reactions");
-        //TODO write proper helpme
-        this.help = "Type smug for info TEST";
+        this.arguments = "[String]";
+        this.help = "Acts smugly to something or to someone";
     }
 
     @Override

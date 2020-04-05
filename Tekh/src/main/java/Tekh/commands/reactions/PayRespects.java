@@ -14,8 +14,8 @@ public class PayRespects extends Command
         this.name = "f";
         this.aliases = new String[]{"payrespect", "payrespects"};
         this.category = new Category("Reactions");
-        //TODO write proper helpme
-        this.help = "Type f for info TEST";
+        this.arguments = "[String]";
+        this.help = "Pays respect to something or to someone";
     }
 
     @Override

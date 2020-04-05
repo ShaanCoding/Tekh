@@ -14,8 +14,8 @@ public class Cringe extends Command
         this.name = "cringe";
         this.aliases = new String[]{"cringes", "cringed"};
         this.category = new Category("Reactions");
-        //TODO write proper helpme
-        this.help = "Type cringe for info TEST";
+        this.arguments = "[String]";
+        this.help = "Cringes at something or at someone";
     }
 
     @Override

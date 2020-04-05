@@ -10,8 +10,8 @@ public class WhoIsAGoodBoy extends Command
         this.name = "whoisagoodboy";
         this.aliases = new String[]{"goodboy", "wiagb"};
         this.category = new Category("Reactions");
-        //TODO write proper helpme
-        this.help = "Type smug for info TEST";
+        this.arguments = "";
+        this.help = "Confirms that the bot is a good boy";
     }
 
     @Override

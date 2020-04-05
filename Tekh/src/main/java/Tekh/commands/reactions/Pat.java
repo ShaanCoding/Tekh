@@ -14,8 +14,8 @@ public class Pat extends Command
         this.name = "pat";
         this.aliases = new String[]{"pats", "patted", "patting"};
         this.category = new Category("Reactions");
-        //TODO write proper helpme
-        this.help = "Type pat for info TEST";
+        this.arguments = "[String]";
+        this.help = "Pats something or someone";
     }
 
     @Override

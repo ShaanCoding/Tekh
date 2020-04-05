@@ -14,8 +14,8 @@ public class Dance extends Command
         this.name = "dance";
         this.aliases = new String[]{"dances", "danced", "dancing"};
         this.category = new Category("Reactions");
-        //TODO write proper helpme
-        this.help = "Type dance for info TEST";
+        this.arguments = "[String]";
+        this.help = "Dances for something or with someone";
     }
 
     @Override

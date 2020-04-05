@@ -14,8 +14,8 @@ public class Poke extends Command
         this.name = "poke";
         this.aliases = new String[]{"pokes", "poked"};
         this.category = new Category("Reactions");
-        //TODO write proper helpme
-        this.help = "Type poke for info TEST";
+        this.arguments = "[String]";
+        this.help = "Pokes something or someone";
     }
 
     @Override

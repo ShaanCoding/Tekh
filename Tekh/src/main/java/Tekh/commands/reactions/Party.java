@@ -14,8 +14,8 @@ public class Party extends Command
         this.name = "party";
         this.aliases = new String[]{"partys", "parties", "partied"};
         this.category = new Category("Reactions");
-        //TODO write proper helpme
-        this.help = "Type party for info TEST";
+        this.arguments = "[String]";
+        this.help = "Parties for something or with someone";
     }
 
     @Override
