@@ -9,7 +9,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import javax.annotation.Nonnull;
 import java.awt.*;
-import java.util.Objects;
+import java.util.*;
 
 public class Help extends Command
 {
@@ -17,6 +17,7 @@ public class Help extends Command
     {
         this.name = "help";
         this.aliases = new String[]{"helps", "commands", "command"};
+        this.category = new Category("General");
         //TODO write proper helpme
         this.help = "Type HELP for info TEST";
     }
@@ -33,7 +34,7 @@ public class Help extends Command
             {
                 EmbedBuilder embedBuilder = new EmbedBuilder();
                 embedBuilder.setTitle(Program.EMOJI_GLOBAL + " Hello I'm " + e.getSelfUser().getName() + "!");
-                embedBuilder.setDescription(formatHelp(e));
+                embedBuilder.setDescription(formatHelpNoArgs(e));
                 embedBuilder.setColor(new Color(0x7115FF));
                 e.getChannel().sendMessage(embedBuilder.build()).queue();
                 embedBuilder.clear();
@@ -42,27 +43,42 @@ public class Help extends Command
             {
                 //LOOK FOR COMMANDS TODO
 
+                /*
+                          builder.append("\n**").append(e.getClient().getPrefix()).append(command.getName())
+                        .append(command.getArguments()==null ? "**" : " "+command.getArguments()+"**")
+                        .append(" - ").append(command.getHelp());
+                 */
             }
 
         }
     }
 
-    public static String formatHelp(CommandEvent e)
+    private static String formatHelpNoArgs(CommandEvent e)
     {
         StringBuilder builder = new StringBuilder("Below you can see all the commands I know.\nIf you need further help with something join our [Support Server](" + Program.configSettings.GetServerInvite() + ").\n\n**Have a nice day!**\n");
         Command.Category category = null;
-        for(Command command : e.getClient().getCommands())
+
+        for(int i = 0; i < e.getClient().getCommands().size(); i++)
         {
-            if(!command.isOwnerCommand() || e.getAuthor().getId().equals(e.getClient().getOwnerId()))
+            //If isn't admin command and isn't owner ID skips
+            if(!e.getClient().getCommands().get(i).isOwnerCommand() || e.getAuthor().getId().equals(e.getClient().getOwnerId()))
             {
-                if(!Objects.equals(category, command.getCategory()))
+                //Displays new category if exists
+                if(!Objects.equals(category, e.getClient().getCommands().get(i).getCategory()))
                 {
-                    category = command.getCategory();
-                    builder.append("\n\n  __").append(category==null ? "No Category" : category.getName()).append("__:\n");
+                    category = e.getClient().getCommands().get(i).getCategory();
+                    builder.append("\n\n  **").append(category==null ? "No Category" : category.getName()).append(":**\n");
                 }
-                builder.append("\n**").append(e.getClient().getPrefix()).append(command.getName())
-                        .append(command.getArguments()==null ? "**" : " "+command.getArguments()+"**")
-                        .append(" - ").append(command.getHelp());
+
+                //Writes command - NEEDS TO FIND OUT HOW MUCH PER CATEGORY TODO
+                if(i < e.getClient().getCommands().size() - 1)
+                {
+                    builder.append("``" + e.getClient().getCommands().get(i).getName() + "``").append(Objects.equals(category, e.getClient().getCommands().get(i).getCategory()) ? ", " : "");
+                }
+                else
+                {
+                    builder.append("``" + e.getClient().getCommands().get(i).getName() + "``");
+                }
             }
         }
 

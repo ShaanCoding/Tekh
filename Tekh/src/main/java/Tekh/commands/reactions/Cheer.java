@@ -21,6 +21,8 @@ public class Cheer extends Command
         this.name = "cheer";
         this.aliases = new String[]{"cheers"};
         this.category = new Category("Reactions");
+        //TODO ADD THIS TO ALL
+        this.arguments = "Yo, No";
         //TODO write proper helpme
         this.help = "Type cheer for info TEST";
     }
