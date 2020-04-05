@@ -284,17 +284,17 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 
 ### Misc
 
-> !invite | Provides the discord instant invite link in the chat (instead of creating a new invite link)
+> !invite | Provides the discord instant invite link in the chat (instead of creating a new invite link) - **DONE**
 
 > !uwuify | oWos a text
 
-> !inspire | Generates a random terrible inspirational quotue
+> !inspire | Generates a random terrible inspirational quotue - **DONE**
 > 
 > !remindMe `<string>` `<string>` | Allows you to set a reminder for an event and will ping you with the event when the time expires (Sends a dm with a link to the referenced command link in question)
 
-> !commands | Lists all the commands
+> !help [`<String>`] | Lists all the commands - **DONE**
 
-> !donate | Sends contact information of how and where to donate to keep the bot running
+> !donate | Sends contact information of how and where to donate to keep the bot running - **DONE**
 
 > !stats | Shows the stats of the discord bot including:
 > 

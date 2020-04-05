@@ -1,4 +1,4 @@
-package Tekh;
+package tekh;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,6 +20,59 @@ public class ConfigSettings
         }
     }
 
+    public String GetOwnerID()
+    {
+        try
+        {
+            return ReadConfig("ownerID");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String GetServerInvite()
+    {
+        try
+        {
+            return ReadConfig("serverInvite");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String GetWebsite()
+    {
+        try
+        {
+            return ReadConfig("websiteURL");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String GetOAuthLink()
+    {
+        try
+        {
+            return ReadConfig("OAuthLink");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
     public String GetPrefix()
     {
         try
@@ -33,7 +86,7 @@ public class ConfigSettings
         }
     }
 
-    public String ReadConfig(String property) throws IOException
+    private String ReadConfig(String property) throws IOException
     {
         String returnString = "";
         InputStream inputStream = null;
