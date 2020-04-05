@@ -43,6 +43,7 @@ public class Help extends Command
             }
             else
             {
+                boolean isCommandFound = false;
                 for (int i = 0; i < e.getClient().getCommands().size(); i++)
                 {
                     //Check if command exists
@@ -52,6 +53,8 @@ public class Help extends Command
                         //If isn't admin command and isn't owner ID skips
                         if (!e.getClient().getCommands().get(i).isOwnerCommand() || e.getAuthor().getId().equals(e.getClient().getOwnerId()))
                         {
+                            isCommandFound = true;
+
                             StringBuilder builder = new StringBuilder();
                           builder.append("\n**").append(e.getClient().getPrefix()).append(e.getClient().getCommands().get(i).getName())
                             .append(e.getClient().getCommands().get(i).getArguments()==null ? "**" : " "+e.getClient().getCommands().get(i).getArguments()+"**")
@@ -61,6 +64,11 @@ public class Help extends Command
                         }
                         break;
                     }
+                }
+
+                if(isCommandFound == false)
+                {
+                    e.getTextChannel().sendMessage("This command could not be found.").queue();
                 }
             }
         }

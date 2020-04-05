@@ -1,5 +1,7 @@
 package Tekh;
 
+import Tekh.commands.misc.InspiroBot;
+import Tekh.commands.misc.Invite;
 import Tekh.commands.reactions.*;
 
 import com.jagrosh.jdautilities.command.CommandClient;
@@ -32,7 +34,9 @@ public class Program
         // m = message, s, f = success and failure success continues, failure replys with warning
         builder.useHelpBuilder(false);
 
-        builder.addCommands(new Help(),
+        builder.addCommand(new Help());
+
+        builder.addCommands(
                 new Cheer(),
                 new Cringe(),
                 new Cries(),
@@ -44,6 +48,10 @@ public class Program
                 new PayRespects(),
                 new Hello(),
                 new WhoIsAGoodBoy());
+
+        builder.addCommands(
+                new Invite(),
+                new InspiroBot());
 
         CommandClient client = builder.build();
         jda.addEventListener(client);

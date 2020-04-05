@@ -284,7 +284,7 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 
 ### Misc
 
-> !invite | Provides the discord instant invite link in the chat (instead of creating a new invite link)
+> !invite | Provides the discord instant invite link in the chat (instead of creating a new invite link) - **DONE**
 
 > !uwuify | oWos a text
 
