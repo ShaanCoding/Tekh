@@ -1,4 +1,4 @@
-package Tekh;
+package tekh;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

@@ -1,9 +1,9 @@
-package Tekh;
+package tekh;
 
-import Tekh.commands.misc.Donate;
-import Tekh.commands.misc.InspiroBot;
-import Tekh.commands.misc.Invite;
-import Tekh.commands.reactions.*;
+import tekh.commands.misc.Donate;
+import tekh.commands.misc.InspiroBot;
+import tekh.commands.misc.Invite;
+import tekh.commands.reactions.*;
 
 import com.jagrosh.jdautilities.command.CommandClient;
 import net.dv8tion.jda.api.AccountType;

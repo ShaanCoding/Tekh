@@ -1,17 +1,12 @@
-package Tekh;
+package tekh;
 
-import Tekh.commands.reactions.Cheer;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-import javax.annotation.Nonnull;
 import java.awt.*;
 import java.util.*;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class Help extends Command
 {
