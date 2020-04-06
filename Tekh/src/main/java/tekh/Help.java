@@ -5,6 +5,7 @@ import com.jagrosh.jdautilities.command.CommandEvent;
 import net.dv8tion.jda.api.EmbedBuilder;
 
 import java.awt.*;
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.List;
 
@@ -83,17 +84,23 @@ public class Help extends Command
                 //Displays new category if exists
                 if(!Objects.equals(category, e.getClient().getCommands().get(i).getCategory()))
                 {
+                    //Removes last comma from last category excluding last element.
+                    if(i != 0)
+                    {
+                        builder.deleteCharAt(builder.length() - 1);
+                        builder.deleteCharAt(builder.length() - 1);
+                    }
                     category = e.getClient().getCommands().get(i).getCategory();
                     builder.append("\n\n  **").append(category==null ? "No Category" : category.getName()).append(":**\n");
                 }
 
-                if(i < e.getClient().getCommands().size() - 1)
+                builder.append("``" + e.getClient().getCommands().get(i).getName() + "``").append(", ");
+
+                //Removes last element comma
+                if(i == e.getClient().getCommands().size() - 1)
                 {
-                    builder.append("``" + e.getClient().getCommands().get(i).getName() + "``").append(Objects.equals(category, e.getClient().getCommands().get(i).getCategory()) ? ", " : "");
-                }
-                else
-                {
-                    builder.append("``" + e.getClient().getCommands().get(i).getName() + "``");
+                    builder.deleteCharAt(builder.length() - 1);
+                    builder.deleteCharAt(builder.length() - 1);
                 }
             }
         }
