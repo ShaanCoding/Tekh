@@ -1,4 +1,4 @@
-package tekh.commands.misc;
+package tekh.commands.web;
 
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
@@ -17,7 +17,7 @@ public class InspiroBot extends Command
     {
         this.name = "inspire";
         this.aliases = new String[]{"shittyquote", "shittyquotes", "inspired", "inspiring"};
-        this.category = new Category("Misc");
+        this.category = new Category("Web");
         this.arguments = "";
         this.help = "Generates a random terrible inspirational quote.";
     }
@@ -28,7 +28,7 @@ public class InspiroBot extends Command
         //Checks if bot
         if(!e.getMember().getUser().isBot())
         {
-            e.getTextChannel().sendMessage("**Inspirational Quote: **" + GrabInspirationalQuote()).queue();
+            e.getTextChannel().sendMessage("**Inspirational Quote: **" + GetInspirationalQuote()).queue();
         }
     }
 
@@ -49,7 +49,7 @@ public class InspiroBot extends Command
         }
     }
 
-    public String GrabInspirationalQuote()
+    private static String GetInspirationalQuote()
     {
         String post_id = "";
 

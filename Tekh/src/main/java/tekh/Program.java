@@ -10,6 +10,8 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
+import tekh.commands.web.InspiroBot;
+import tekh.commands.web.Poll;
 
 public class Program
 {
@@ -50,8 +52,11 @@ public class Program
                 new WhoIsAGoodBoy());
 
         builder.addCommands(
-                new Invite(),
-                new InspiroBot());
+                new InspiroBot(),
+                new Poll());
+
+        builder.addCommands(
+                new Invite());
 
         CommandClient client = builder.build();
         jda.addEventListener(client);
