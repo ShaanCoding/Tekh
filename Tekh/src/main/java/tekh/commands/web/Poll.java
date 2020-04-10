@@ -2,6 +2,8 @@ package tekh.commands.web;
 
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
+import sun.security.krb5.Config;
+import tekh.Program;
 
 import java.io.DataOutputStream;
 import java.net.HttpURLConnection;
@@ -51,77 +53,35 @@ public class Poll extends Command
             //Checks argument length
             if(args.size() <= 3)
             {
-                e.getChannel().sendMessage("REE");
+                e.getChannel().sendMessage("**Error:** Command Entered Incorrectly, Please Use **" + Program.configSettings.GetPrefix() + this.name + " " + this.arguments + "**").queue();
             }
             else
             {
-                e.getChannel().sendMessage(GetStrawPoll(args));
+                e.getChannel().sendMessage(GetStrawPoll(args)).queue();
             }
         }
     }
 
-    public static String GetStrawPoll(List<String> args)
+    private static String GetStrawPoll(List<String> args)
     {
-        String outputString = "";
-
-        args.remove(0);
-
-        try
+        String title = args.get(1);
+        StringBuilder sb = new StringBuilder();
+        for(int i = 2; i < args.size(); i++)
         {
-
-            String URLString = "https://strawpoll.me/api/v2/polls";
-            URL url = new URL(URLString);
-
-            Map<String,String> arguments = new HashMap<>();
-
-            arguments.put("title", args.get(0));
-            //Needs to be ["Option 1", "Option 2" ]
-
-            StringBuilder sb = new StringBuilder();
-            for(int i = 1; i < args.size(); i++)
+            if(i < args.size() - 1)
             {
-                if(i < args.size() - 1)
-                {
-                    sb.append(args.get(i) + ", ");
-                }
-                else
-                {
-                    sb.append(args.get(i));
-                }
+                sb.append(args.get(i) + ", ");
             }
-
-            arguments.put("options", sb.toString());
-
-            StringJoiner sj = new StringJoiner("&");
-            for(Map.Entry<String,String> entry : arguments.entrySet())
+            else
             {
-                sj.add(URLEncoder.encode(entry.getKey(), "UTF-8") + "=" + URLEncoder.encode(entry.getValue(), "UTF-8"));
+                sb.append(args.get(i));
             }
-
-            System.out.println(sj.toString());
-
-            byte[] postData = sj.toString().getBytes(StandardCharsets.UTF_8);
-            int postDataLength = postData.length;
-
-            HttpURLConnection conn= (HttpURLConnection)url.openConnection();
-            conn.setDoOutput(true);
-            conn.setInstanceFollowRedirects(false);
-            conn.setRequestMethod("POST");
-            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-            conn.setRequestProperty("charset", "utf-8");
-            conn.setRequestProperty("Content-Length", Integer.toString(postDataLength));
-            conn.setUseCaches(false);
-
-            DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
-            wr.write(postData);
-
-            outputString = wr.toString();
-        }
-        catch(Exception ex)
-        {
-            System.out.println("An exception has occured, refer to: " + ex.toString());
         }
 
-        return outputString;
+        System.out.println(title);
+        System.out.println(sb.toString());
+        StrawPollWrapper strawPoll = new StrawPollWrapper(title, sb.toString());
+        strawPoll.create();
+        return "**StrawPoll Created:** " + strawPoll.getPollURL();
     }
 }

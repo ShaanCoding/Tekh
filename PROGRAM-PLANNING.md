@@ -260,7 +260,7 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 
 > !inspire | Generates a random terrible inspirational quotue - **DONE**
 
-> !strawpoll `{<string>}` {`<string>`} | To create a multi-reaction poll type {title}   [option 1] [option 2] [option 3] ...
+> !strawpoll `{<string>}` {`<string>`} | To create a multi-reaction poll type {title}   [option 1] [option 2] [option 3] ... - **DOING RIGHT NOW**
 
 > !urbanDictionary `<string>` | Searches on urban dictionary for `<Word Name>` and displays a formatted post by the bot
 
