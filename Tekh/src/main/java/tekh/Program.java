@@ -2,6 +2,7 @@ package tekh;
 
 import tekh.commands.misc.*;
 import tekh.commands.reactions.*;
+import tekh.commands.web.*;
 
 import com.jagrosh.jdautilities.command.CommandClient;
 import net.dv8tion.jda.api.AccountType;
@@ -10,8 +11,6 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
-import tekh.commands.web.InspiroBot;
-import tekh.commands.web.Poll;
 
 public class Program
 {
@@ -53,7 +52,8 @@ public class Program
 
         builder.addCommands(
                 new InspiroBot(),
-                new Poll());
+                new Poll(),
+                new UrbanDictionary());
 
         builder.addCommands(
                 new Invite());
