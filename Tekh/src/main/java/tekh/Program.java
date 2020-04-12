@@ -53,7 +53,8 @@ public class Program
         builder.addCommands(
                 new InspiroBot(),
                 new Poll(),
-                new UrbanDictionary());
+                new UrbanDictionary(),
+                new LetMeGoogleThatForYou());
 
         builder.addCommands(
                 new Invite());
