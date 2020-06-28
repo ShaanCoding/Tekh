@@ -35,7 +35,8 @@ public class Program
         builder.useHelpBuilder(false);
 
         builder.addCommands(new Help(),
-                new Donate());
+                new Donate(),
+                new Statistics());
 
         builder.addCommands(
                 new Cheer(),
