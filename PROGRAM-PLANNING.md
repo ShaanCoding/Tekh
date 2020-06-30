@@ -264,7 +264,7 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 
 > !urbanDictionary `<string>` | Searches on urban dictionary for `<Word Name>` and displays a formatted post by the bot - **DONE**
 
-> !lmgtfy `<string>` | Provides a let me google that for you link for the proposed string
+> !lmgtfy `<string>` | Provides a let me google that for you link for the proposed string - **DONE**
 
 > !google `<int>` `<string>` | Returns the n number of top results in googles format
 
@@ -288,7 +288,7 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 
 > !invite | Provides the discord instant invite link in the chat (instead of creating a new invite link) - **DONE**
 
-> !uwuify | oWos a text
+> !uwuify | oWos a text - **DONE, dear god help us all**
 
 > !remindMe `<string>` `<string>` | Allows you to set a reminder for an event and will ping you with the event when the time expires (Sends a dm with a link to the referenced command link in question)
 
@@ -296,8 +296,32 @@ May need a prefix **keyword** to prevent misfires ( e.g "hey google -", "alexa -
 
 > !donate | Sends contact information of how and where to donate to keep the bot running - **DONE**
 
-> !stats | Shows the stats of the discord bot including:
+> !stats | Shows the stats of the discord bot including: - **DONE**
 > 
 > * Uptime
 > 
 > * Ping
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

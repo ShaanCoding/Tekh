@@ -36,6 +36,7 @@ public class Program
 
         builder.addCommands(new Help(),
                 new Donate(),
+                new Uwuifier(),
                 new Statistics());
 
         builder.addCommands(
