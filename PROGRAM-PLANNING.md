@@ -1,4 +1,4 @@
-# Discord Bot - Tekhs
+# Discord Bot - Tekh
 
 ## Preface
 
